@@ -5,7 +5,7 @@ author_profile: true
 
 # Dr. Deepak Waman
 
-**Cloud Microphysics | Ice Nucleation | Secondary Ice Production | ICON Model Development**
+*Cloud Microphysics &nbsp;|&nbsp; Ice Nucleation &nbsp;|&nbsp; Secondary Ice Production &nbsp;|&nbsp; Numerical modeling &nbsp;|&nbsp; Storm electrification and lightning*
 
 [Download CV](/assets/files/CV_Deepak_Waman.pdf){: .btn .btn--primary} &nbsp; [Publications](/publications/){: .btn .btn--info} &nbsp; [Contact](/contact/){: .btn .btn--info}
 
