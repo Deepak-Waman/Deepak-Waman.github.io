@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Deepak Waman</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0f1f38;
+    --navy-mid: #162a4a;
+    --sky: #4a90c4;
+    --sky-light: #6aaed6;
+    --ice: #d6eaf8;
+    --white: #ffffff;
+    --off-white: #f4f8fc;
+    --text-dark: #1a2940;
+    --text-mid: #3d5166;
+    --text-muted: #6b7f95;
+    --border: #dde7f0;
+    --font-body: 'Inter', sans-serif;
+    --font-serif: 'Lora', serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background: var(--white);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: center; align-items: center;
+    padding: 1rem 2rem; gap: 2.5rem;
+    background: rgba(15, 31, 56, 0.85);
+    backdrop-filter: blur(10px);
+  }
+  nav a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--sky-light); }
+  nav .nav-name {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-right: auto;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(to bottom, rgba(10,20,40,0.72) 0%, rgba(15,31,56,0.60) 60%, rgba(15,31,56,0.80) 100%),
+      url('https://images.unsplash.com/photo-1504608524841-42584120d693?w=1600&q=80') center/cover no-repeat;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem 4rem;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(74,144,196,0.25);
+    border: 1px solid rgba(106,174,214,0.40);
+    color: var(--sky-light);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.18;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    max-width: 600px;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    font-family: var(--font-serif);
+  }
+  .hero-inst {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 2.5rem;
+  }
+  .hero-divider {
+    width: 40px; height: 2px;
+    background: var(--sky-light);
+    margin: 1.2rem auto 2rem;
+  }
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: var(--sky);
+    color: var(--white);
+    border: 1.5px solid var(--sky);
+  }
+  .btn-primary:hover { background: var(--sky-light); border-color: var(--sky-light); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.45);
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+  /* SCROLL INDICATOR */
+  .scroll-hint {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.40); font-size: 0.72rem; letter-spacing: 0.1em;
+  }
+  .scroll-arrow {
+    width: 20px; height: 20px;
+    border-right: 1.5px solid rgba(255,255,255,0.35);
+    border-bottom: 1.5px solid rgba(255,255,255,0.35);
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(5px); }
+  }
+  .hero { position: relative; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
+  .section-rule {
+    width: 36px; height: 2px;
+    background: var(--sky);
+    margin-bottom: 2rem;
+  }
+
+  /* ABOUT */
+  #about { background: var(--off-white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 680px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text p { color: var(--text-mid); margin-bottom: 1rem; font-size: 0.97rem; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .tag {
+    background: var(--ice);
+    color: var(--navy-mid);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+  }
+  .stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem 1rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+  /* NEWS */
+  #news { background: var(--white); }
+  .news-list { display: flex; flex-direction: column; gap: 0; }
+  .news-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+  .news-item:first-child { border-top: 1px solid var(--border); }
+  .news-date { font-size: 0.8rem; color: var(--sky); font-weight: 500; }
+  .news-text { font-size: 0.95rem; color: var(--text-mid); }
+  .news-text strong { color: var(--text-dark); }
+  @media (max-width: 540px) {
+    .news-item { grid-template-columns: 1fr; gap: 0.3rem; }
+  }
+
+  /* PUBLICATIONS */
+  #publications { background: var(--off-white); }
+  .pub-list { display: flex; flex-direction: column; gap: 1.4rem; }
+  .pub-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--sky);
+    border-radius: 4px;
+    padding: 1.2rem 1.4rem;
+  }
+  .pub-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-bottom: 0.6rem;
+  }
+  .badge-revision { background: #fff3cd; color: #856404; }
+  .badge-published { background: #d1e7dd; color: #155724; }
+  .pub-title { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.3rem; line-height: 1.45; }
+  .pub-authors { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+  .pub-journal { font-size: 0.83rem; color: var(--text-mid); font-style: italic; }
+  .pub-doi { font-size: 0.80rem; color: var(--sky); text-decoration: none; }
+  .pub-doi:hover { text-decoration: underline; }
+
+  /* PROJECTS */
+  #projects { background: var(--white); }
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
+  .proj-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.4rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .proj-card:hover { border-color: var(--sky); box-shadow: 0 4px 16px rgba(74,144,196,0.10); }
+  .proj-icon {
+    width: 36px; height: 36px;
+    background: var(--ice);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  .proj-title { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.4rem; }
+  .proj-funder { font-size: 0.75rem; color: var(--sky); font-weight: 500; margin-bottom: 0.6rem; }
+  .proj-desc { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+
+  /* CONTACT */
+  #contact { background: var(--navy); color: var(--white); text-align: center; }
+  #contact .section-title { color: var(--white); }
+  #contact .section-label { color: var(--sky-light); }
+  #contact .section-rule { background: var(--sky-light); margin: 0 auto 2rem; }
+  .contact-sub { color: rgba(255,255,255,0.65); font-size: 0.95rem; max-width: 480px; margin: 0 auto 2.5rem; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--sky-light); color: var(--sky-light); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-mid);
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.78rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Dr. Deepak Waman</span>
+  <a href="#about">About</a>
+  <a href="#news">News</a>
+  <a href="#publications">Publications</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+  <span class="hero-tag">Cloud Microphysics &amp; Atmospheric Modeling</span>
+  <h1>Dr. Deepak Waman</h1>
+  <p class="hero-sub">Ice nucleation, secondary ice production, and ICON model development</p>
+  <p class="hero-inst">Postdoctoral Researcher &middot; Karlsruhe Institute of Technology</p>
+  <div class="hero-divider"></div>
+  <div class="btn-group">
+    <a href="assets/files/CV_Deepak_Waman.pdf" class="btn btn-primary">Download CV</a>
+    <a href="#publications" class="btn btn-outline">Publications</a>
+    <a href="#contact" class="btn btn-outline">Contact</a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Research Focus</h2>
+    <div class="section-rule"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a postdoctoral researcher at the <strong>Institute of Meteorology and Climate Research (IMK-TRO)</strong>, Karlsruhe Institute of Technology (KIT), Germany, working under Prof. Corinna Hoose within the BMBF-funded WarmWorld project.</p>
+        <p>My research centers on cloud microphysical processes and their representation in global atmospheric models. I develop and evaluate parameterizations for ice nucleation, secondary ice production, aerosol-cloud-radiation interactions, and thunderstorm electrification within the ICON modeling framework.</p>
+        <p>I completed my PhD at Lund University, Sweden (2019&ndash;2023), under Dr. Vaughan Phillips, where I developed the AC bin-microphysics model to study ice multiplication in mixed-phase clouds.</p>
+        <div class="tag-list">
+          <span class="tag">Secondary Ice Production</span>
+          <span class="tag">Ice Nucleation</span>
+          <span class="tag">ICON Model</span>
+          <span class="tag">Aerosol-Cloud Interactions</span>
+          <span class="tag">Thunderstorm Electrification</span>
+          <span class="tag">EarthCARE</span>
+        </div>
+      </div>
+      <div>
+        <div class="stat-block">
+          <div class="stat-card">
+            <div class="stat-num">7</div>
+            <div class="stat-label">h-index</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">~178</div>
+            <div class="stat-label">Citations</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">First-author papers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">2</div>
+            <div class="stat-label">MSc students supervised</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="container">
+    <p class="section-label">Latest</p>
+    <h2 class="section-title">News &amp; Updates</h2>
+    <div class="section-rule"></div>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-date">July 2026</span>
+        <span class="news-text"><strong>ACP manuscript under minor revision.</strong> <em>Impacts of Secondary Ice Production on the Microphysics and Dynamics of Deep Convective Clouds</em> evaluated across CAIPEEX, DCMEX, MC3E, and ORCESTRA using ICON at 1.6 km with EarthCARE CPR observations.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2024&ndash;2026</span>
+        <span class="news-text"><strong>WarmWorld contribution.</strong> Implemented CAMS reanalysis aerosol reader in ICON-AES, enabling prognostic aerosol input to two-moment microphysics in kilometer-scale global simulations.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2023&ndash;present</span>
+        <span class="news-text"><strong>CHARGE initiative.</strong> Developing a thunderstorm electrification scheme for ICON, including a 3D Poisson solver for the electric field validated against field campaign observations (LEE, DC3, ESCAPE, STEPS).</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Dec 2023</span>
+        <span class="news-text"><strong>Joined KIT</strong> as a postdoctoral researcher at IMK-TRO under Prof. Corinna Hoose.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="container">
+    <p class="section-label">Research Output</p>
+    <h2 class="section-title">Publications</h2>
+    <div class="section-rule"></div>
+    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.8rem;">
+      h-index: 7 &middot; Citations: ~178 &middot;
+      <a href="https://orcid.org/0000-0001-8640-648X" style="color:var(--sky);">ORCID 0000-0001-8640-648X</a>
+    </p>
+    <div class="pub-list">
+
+      <div class="pub-card">
+        <span class="pub-badge badge-revision">Under Minor Revision</span>
+        <p class="pub-title">Impacts of Secondary Ice Production on the Microphysics and Dynamics of Deep Convective Clouds</p>
+        <p class="pub-authors"><strong>Waman, D.</strong>, Blyth, A., Finney, D., and Hoose, C. (2025)</p>
+        <p class="pub-journal">Atmospheric Chemistry and Physics</p>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge badge-published">Published</span>
+        <p class="pub-title">Multiple Observed Roles of Supercooled Liquid Water in the Life Cycle of a Severe Hailstorm</p>
+        <p class="pub-authors"><strong>Waman, D.</strong>, Phillips, V. T. J., Patade, S., Deshmukh, A., and Bansemer, A. (2022)</p>
+        <p class="pub-journal">Journal of the Atmospheric Sciences, 79(12), 3189&ndash;3215</p>
+        <a href="https://doi.org/10.1175/JAS-D-21-0304.1" class="pub-doi" target="_blank">DOI: 10.1175/JAS-D-21-0304.1</a>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge badge-published">Published</span>
+        <p class="pub-title">Dependencies of the Primary and Secondary Modes of Ice Production on Cloud-Top Temperature and Vertical Velocity of Deep Convective Clouds</p>
+        <p class="pub-authors"><strong>Waman, D.</strong>, Patade, S., Jadav, A., Deshmukh, A., Bansemer, A., and Phillips, V. T. J. (2022)</p>
+        <p class="pub-journal">Journal of the Atmospheric Sciences, 79(12), 3143&ndash;3167</p>
+        <a href="https://doi.org/10.1175/JAS-D-21-0278.1" class="pub-doi" target="_blank">DOI: 10.1175/JAS-D-21-0278.1</a>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge badge-published">Published</span>
+        <p class="pub-title">Aerosol Effects on the Primary and Secondary Ice Production in Tropical Deep Convective Clouds</p>
+        <p class="pub-authors"><strong>Waman, D.</strong>, Patade, S., Jadav, A., Deshmukh, A., Bansemer, A., and Phillips, V. T. J. (2022)</p>
+        <p class="pub-journal">Journal of the Atmospheric Sciences, 79(12), 3261&ndash;3284</p>
+        <a href="https://doi.org/10.1175/JAS-D-21-0279.1" class="pub-doi" target="_blank">DOI: 10.1175/JAS-D-21-0279.1</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Active Work</p>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-rule"></div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-icon">&#9928;</div>
+        <p class="proj-title">WarmWorld</p>
+        <p class="proj-funder">BMBF &middot; 2023&ndash;2027</p>
+        <p class="proj-desc">Kilometer-scale global ICON simulations with CAMS aerosol coupling in ICON-AES. Targeting aerosol-cloud interaction quantification at global scale.</p>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-icon">&#9889;</div>
+        <p class="proj-title">CHARGE</p>
+        <p class="proj-funder">DFG Eigene Stelle &middot; In preparation</p>
+        <p class="proj-desc">Thunderstorm electrification scheme for ICON: inductive and non-inductive charging with a 3D Poisson solver. Validated against LEE, DC3, ESCAPE, and STEPS campaigns.</p>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-icon">&#9735;</div>
+        <p class="proj-title">FLASHMAP</p>
+        <p class="proj-funder">Lightning modeling</p>
+        <p class="proj-desc">XGBoost machine learning pipeline for lightning flash density prediction using Saunders charge-reversal physics. Companion observational paper targeting ACP.</p>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-icon">&#127760;</div>
+        <p class="proj-title">ORCESTRA LAM</p>
+        <p class="proj-funder">Field campaign modeling</p>
+        <p class="proj-desc">Limited-area ICON runscripts for the ORCESTRA tropical Atlantic campaign with LAGRANTO trajectory analysis for air mass tracking.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-rule"></div>
+    <p class="contact-sub">I welcome inquiries on research collaborations, ICON model development, and atmospheric science opportunities.</p>
+    <p style="color:rgba(255,255,255,0.70); margin-bottom:2rem; font-size:0.95rem;">deepak.waman@kit.edu &middot; IMK-TRO, Karlsruhe Institute of Technology, Germany</p>
+    <div class="contact-links">
+      <a href="https://orcid.org/0000-0001-8640-648X" class="contact-link" target="_blank">ORCID</a>
+      <a href="https://www.researchgate.net/profile/Deepak_Waman2" class="contact-link" target="_blank">ResearchGate</a>
+      <a href="https://www.linkedin.com/in/deepak-waman-1b7490197/" class="contact-link" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Deepak-Waman" class="contact-link" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Dr. Deepak Waman &middot; Karlsruhe Institute of Technology
+</footer>
+
+</body>
+</html>
