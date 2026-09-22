@@ -54,12 +54,28 @@ section{padding:88px 0}
 
 /* HERO */
 .hero{
- min-height:680px;height:min(78vh,760px);padding:120px 0 58px;
- display:flex;align-items:center;position:relative;overflow:hidden;
+ min-height:0;
+ height:auto;
+ aspect-ratio: 16 / 7;
+ padding:90px 0 40px;
+ display:flex;
+ align-items:center;
+ position:relative;
+ overflow:hidden;
+
  background:
- linear-gradient(90deg,rgba(5,36,69,.91) 0%,rgba(5,42,79,.77) 42%,rgba(5,35,65,.25) 76%,rgba(5,35,65,.12) 100%),
- url("assets/images/Background_image_chatgpt.png") center 43%/contain no-repeat;
+ linear-gradient(
+   90deg,
+   rgba(5,30,58,.72) 0%,
+   rgba(5,35,65,.52) 38%,
+   rgba(5,35,65,.15) 70%,
+   rgba(5,35,65,.04) 100%
+ ),
+ url("assets/images/Background_image_chatgpt.png")
+ center center / cover
+ no-repeat;
 }
+
 .hero:after{
  content:"";position:absolute;inset:auto 0 0;height:140px;
  background:linear-gradient(transparent,rgba(4,25,48,.28))
