@@ -1,213 +1,255 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dr. Deepak Waman — cloud physics, extreme weather, atmospheric electricity, and numerical modeling.">
+<meta name="description" content="Dr. Deepak Waman — cloud physics, extreme weather, atmospheric electricity, and numerical atmospheric modeling.">
 <title>Dr. Deepak Waman | Atmospheric Scientist</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --ink:#102238;
-  --ink2:#294158;
-  --muted:#6d7e8e;
-  --blue:#3177a8;
-  --blue2:#70acd0;
-  --ice:#eaf4fa;
-  --paper:#fbfcfd;
-  --white:#fff;
-  --line:#dfe7ed;
-  --dark:#0b1c2c;
-  --serif:"Libre Caslon Text", Georgia, serif;
-  --sans:"DM Sans", Arial, sans-serif;
+  --navy:#09264b;
+  --navy2:#0d3d70;
+  --blue:#087cf0;
+  --blue2:#52a8ec;
+  --ice:#eaf6ff;
+  --ink:#10284b;
+  --text:#425c79;
+  --muted:#71849a;
+  --line:#dce7f0;
+  --paper:#ffffff;
+  --soft:#f6f9fc;
+  --warm:#fff6e7;
+  --gold:#c47a00;
+  --sans:"Inter",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.7}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65}
 a{color:inherit}
-.container{width:min(1120px,calc(100% - 44px));margin:auto}
-.kicker{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:.7rem}
-h1,h2,h3{font-family:var(--serif);font-weight:400}
-h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.15;letter-spacing:-.02em}
-p{color:var(--ink2)}
-section{padding:100px 0}
+img{display:block;max-width:100%}
+.container{width:min(1180px,calc(100% - 44px));margin:auto}
+section{padding:88px 0}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.section-title{font-size:clamp(2rem,4vw,3rem);line-height:1.12;letter-spacing:-.035em;margin-bottom:14px}
+.section-lead{max-width:730px;color:var(--text);font-size:1rem}
 
-/* navigation */
-header{
- position:fixed;inset:0 0 auto;z-index:50;
- background:rgba(9,26,41,.88);backdrop-filter:blur(14px);
- border-bottom:1px solid rgba(255,255,255,.08)
+/* NAV */
+.site-header{
+ position:fixed;z-index:100;top:0;left:0;right:0;
+ background:rgba(255,255,255,.96);backdrop-filter:blur(14px);
+ border-bottom:1px solid rgba(9,38,75,.09)
 }
-.nav{height:70px;display:flex;align-items:center;gap:30px}
-.brand{font-family:var(--serif);font-size:1.05rem;color:white;text-decoration:none;margin-right:auto}
-.navlinks{display:flex;align-items:center;gap:26px}
-.navlinks a{color:rgba(255,255,255,.78);font-size:.84rem;text-decoration:none;transition:.2s}
-.navlinks a:hover,.navlinks a.active{color:white}
-.menu{display:none;background:none;border:0;color:white;font-size:1.5rem;cursor:pointer}
+.nav{height:72px;display:flex;align-items:center;gap:30px}
+.brand{font-size:1.02rem;font-weight:700;text-decoration:none;color:var(--navy);margin-right:auto;white-space:nowrap}
+.navlinks{display:flex;align-items:center;gap:27px}
+.navlinks a{font-size:.84rem;text-decoration:none;color:#294666;font-weight:500;padding:25px 0 21px;border-bottom:3px solid transparent}
+.navlinks a:hover,.navlinks a.active{color:var(--blue);border-color:var(--blue)}
+.menu{display:none;border:0;background:none;color:var(--navy);font-size:1.45rem;cursor:pointer}
 
-/* hero */
+/* HERO */
 .hero{
- min-height:100vh;padding:130px 0 80px;display:flex;align-items:center;position:relative;overflow:hidden;
+ min-height:680px;height:min(78vh,760px);padding:120px 0 58px;
+ display:flex;align-items:center;position:relative;overflow:hidden;
  background:
- linear-gradient(90deg,rgba(7,24,39,.96) 0%,rgba(7,24,39,.90) 43%,rgba(7,24,39,.55) 100%),
- url("https://images.unsplash.com/photo-1504608524841-42584120d693?w=1800&q=88") center/cover no-repeat;
+ linear-gradient(90deg,rgba(5,36,69,.91) 0%,rgba(5,42,79,.77) 42%,rgba(5,35,65,.25) 76%,rgba(5,35,65,.12) 100%),
+ url("https://images.unsplash.com/photo-1566010503302-2564ae0d47b6?auto=format&fit=crop&w=2000&q=88") center 43%/cover no-repeat;
 }
 .hero:after{
- content:"";position:absolute;right:-8vw;bottom:-30vh;width:58vw;height:58vw;
- border:1px solid rgba(255,255,255,.09);border-radius:50%;box-shadow:0 0 0 8vw rgba(255,255,255,.018),0 0 0 16vw rgba(255,255,255,.014)
+ content:"";position:absolute;inset:auto 0 0;height:140px;
+ background:linear-gradient(transparent,rgba(4,25,48,.28))
 }
-.hero-content{position:relative;z-index:2;max-width:850px}
-.hero .eyebrow{color:#9ac8e2;font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;margin-bottom:22px}
-.hero h1{font-size:clamp(3.2rem,7vw,6.4rem);line-height:.98;color:white;letter-spacing:-.045em;margin-bottom:22px}
-.hero-role{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.75rem);color:rgba(255,255,255,.84);margin-bottom:14px}
-.hero-theme{font-size:clamp(.92rem,1.8vw,1.08rem);color:#91c4df;letter-spacing:.055em;margin-bottom:28px}
-.hero-copy{max-width:690px;color:rgba(255,255,255,.68);font-size:1.02rem;margin-bottom:35px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.button{display:inline-flex;align-items:center;gap:8px;padding:12px 19px;border:1px solid rgba(255,255,255,.3);text-decoration:none;color:white;font-size:.87rem;transition:.25s}
-.button.primary{background:white;color:var(--dark);border-color:white}
-.button:hover{transform:translateY(-2px);border-color:white}
-.scroll-note{position:absolute;z-index:3;bottom:25px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.42);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+.hero-content{position:relative;z-index:2;width:min(1000px,92%)}
+.hero .eyebrow{color:#d9efff;margin-bottom:18px}
+.hero h1{
+ color:white;font-size:clamp(2.8rem,6.3vw,5.3rem);
+ line-height:1.02;letter-spacing:-.055em;font-weight:700;
+ white-space:nowrap;margin-bottom:17px
+}
+.hero-theme{color:white;font-size:clamp(1.1rem,2.4vw,1.65rem);font-weight:400;margin-bottom:12px}
+.hero-copy{color:rgba(255,255,255,.88);max-width:700px;font-size:1rem;line-height:1.65;margin-bottom:28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.button{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:44px;padding:10px 17px;border-radius:7px;
+ border:1px solid rgba(255,255,255,.75);color:white;text-decoration:none;
+ font-size:.85rem;font-weight:600;transition:.2s
+}
+.button.primary{background:var(--blue);border-color:var(--blue)}
+.button:hover{transform:translateY(-2px);background:white;color:var(--navy)}
+.hero-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.hero-links a{
+ min-width:72px;text-align:center;color:white;text-decoration:none;font-size:.72rem;font-weight:600
+}
+.icon-circle{
+ width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+ margin:0 auto 6px;background:rgba(255,255,255,.94);color:var(--navy);
+ border:1px solid rgba(255,255,255,.75);font-size:.75rem;font-weight:700
+}
+.hero-caption{position:absolute;z-index:3;right:28px;bottom:18px;color:rgba(255,255,255,.68);font-size:.7rem;font-style:italic}
 
-/* intro */
-#about{background:white}
-.intro-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:90px;align-items:start}
-.big-intro{font-family:var(--serif);font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.45;color:var(--ink)}
-.about-copy p{margin-bottom:18px;font-size:1rem}
-.quickfacts{margin-top:34px;border-top:1px solid var(--line)}
-.fact{display:grid;grid-template-columns:150px 1fr;padding:13px 0;border-bottom:1px solid var(--line);font-size:.87rem}
+/* RESEARCH THEMES */
+#research{background:white}
+.section-top{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:34px}
+.section-link{color:var(--blue);font-size:.84rem;font-weight:600;text-decoration:none;white-space:nowrap}
+.title-rule{width:42px;height:3px;background:var(--blue);margin-top:14px}
+.theme-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.theme-card{
+ border:1px solid var(--line);border-radius:9px;background:white;overflow:hidden;
+ box-shadow:0 3px 15px rgba(16,40,75,.055);transition:.25s;cursor:pointer
+}
+.theme-card:hover,.theme-card.active{transform:translateY(-4px);box-shadow:0 10px 25px rgba(16,40,75,.12);border-color:#b9d9ee}
+.theme-image{height:135px;background-size:cover;background-position:center}
+.theme-card:nth-child(1) .theme-image{background-image:url("https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=800&q=82")}
+.theme-card:nth-child(2) .theme-image{background-image:url("https://images.unsplash.com/photo-1516431883659-655d41c09bf9?auto=format&fit=crop&w=800&q=82")}
+.theme-card:nth-child(3) .theme-image{background-image:url("https://images.unsplash.com/photo-1562155955-1cb2d73488d7?auto=format&fit=crop&w=800&q=82")}
+.theme-card:nth-child(4) .theme-image{background-image:url("https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&w=800&q=82")}
+.theme-card:nth-child(5) .theme-image{background-image:url("https://images.unsplash.com/photo-1429552077091-836152271555?auto=format&fit=crop&w=800&q=82")}
+.theme-body{padding:16px 15px 18px}
+.theme-body h3{font-size:.92rem;line-height:1.35;margin-bottom:7px}
+.theme-body p{font-size:.78rem;line-height:1.55;color:var(--text)}
+.research-detail{
+ margin-top:24px;background:var(--soft);border-left:4px solid var(--blue);
+ padding:24px 28px;border-radius:0 8px 8px 0
+}
+.research-detail h3{font-size:1.15rem;margin-bottom:7px}
+.research-detail p{font-size:.9rem;color:var(--text);max-width:950px}
+
+/* ESTABLISHED / EMERGING */
+.directions{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:25px}
+.direction{border-radius:10px;padding:30px;background:linear-gradient(135deg,#e7f5ff,#f7fbff);border:1px solid #d7ebf8}
+.direction.emerging{background:linear-gradient(135deg,#fff7e9,#fffdf9);border-color:#f2e2c6}
+.direction-label{display:flex;align-items:center;gap:12px;font-size:.86rem;font-weight:700;margin-bottom:12px}
+.direction-icon{font-size:1.55rem;color:var(--blue)}
+.emerging .direction-icon{color:var(--gold)}
+.direction h3{font-size:1.28rem;margin-bottom:8px}
+.direction p{font-size:.86rem;color:var(--text)}
+
+/* ABOUT */
+#about{background:var(--soft)}
+.about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px}
+.about-copy .large{font-family:var(--serif);font-size:clamp(1.45rem,2.8vw,2.1rem);line-height:1.42;color:var(--ink);margin-bottom:20px}
+.about-copy p{color:var(--text);margin-bottom:15px}
+.facts{margin-top:26px;border-top:1px solid var(--line)}
+.fact{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.84rem}
 .fact span:first-child{color:var(--muted)}
-.fact span:last-child{color:var(--ink);font-weight:500}
+.fact span:last-child{font-weight:600}
 
-/* research */
-#research{background:#f3f7fa}
-.section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;margin-bottom:58px}
-.section-lead{font-size:1.03rem;max-width:650px}
-.research-shell{display:grid;grid-template-columns:310px 1fr;border-top:1px solid #cfdbe3;border-bottom:1px solid #cfdbe3}
-.research-tabs{border-right:1px solid #cfdbe3}
-.rtab{
- width:100%;text-align:left;background:none;border:0;border-bottom:1px solid #dbe4ea;
- padding:25px 22px;cursor:pointer;color:var(--muted);font:500 .93rem var(--sans);transition:.2s
-}
-.rtab:last-child{border-bottom:0}
-.rtab span{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px;color:var(--blue)}
-.rtab.active,.rtab:hover{background:white;color:var(--ink);padding-left:29px}
-.research-panel{background:white;padding:45px 52px;min-height:350px}
-.research-panel h3{font-size:2rem;margin-bottom:16px}
-.research-panel p{max-width:700px;margin-bottom:25px}
-.topic-list{display:flex;flex-wrap:wrap;gap:9px}
-.topic-list span{font-size:.78rem;padding:7px 11px;background:var(--ice);color:#31536a}
-.research-note{margin-top:32px;padding-top:22px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
-
-/* journey */
+/* JOURNEY */
 #journey{background:white}
-.timeline{margin-top:55px;position:relative}
-.timeline:before{content:"";position:absolute;left:142px;top:0;bottom:0;width:1px;background:var(--line)}
-.milestone{display:grid;grid-template-columns:110px 1fr;gap:65px;position:relative;padding:0 0 45px}
-.milestone:before{content:"";position:absolute;left:137px;top:7px;width:11px;height:11px;border-radius:50%;background:white;border:2px solid var(--blue)}
-.year{color:var(--blue);font-size:.82rem;font-weight:600;letter-spacing:.04em}
-.milestone h3{font-size:1.3rem;margin-bottom:7px}
-.milestone p{font-size:.92rem;max-width:740px}
+.timeline{margin-top:45px;position:relative}
+.timeline:before{content:"";position:absolute;left:135px;top:5px;bottom:8px;width:1px;background:var(--line)}
+.milestone{display:grid;grid-template-columns:105px 1fr;gap:60px;position:relative;padding-bottom:38px}
+.milestone:before{content:"";position:absolute;left:130px;top:6px;width:11px;height:11px;background:white;border:2px solid var(--blue);border-radius:50%}
+.year{font-size:.78rem;font-weight:700;color:var(--blue)}
+.milestone h3{font-size:1.05rem;margin-bottom:5px}
+.milestone p{font-size:.87rem;color:var(--text);max-width:800px}
 
-/* projects */
-#projects{background:var(--dark);color:white}
-#projects .kicker{color:#83bad9}
-#projects h2{color:white}
-#projects .section-lead{color:rgba(255,255,255,.62)}
-.projects{margin-top:55px;border-top:1px solid rgba(255,255,255,.17)}
+/* PROJECTS */
+#projects{background:var(--navy);color:white}
+#projects .eyebrow{color:#8bc8f0}
+#projects .section-title{color:white}
+#projects .section-lead{color:rgba(255,255,255,.68)}
+.projects{margin-top:40px;border-top:1px solid rgba(255,255,255,.17)}
 .project{border-bottom:1px solid rgba(255,255,255,.17)}
-.project-head{
- display:grid;grid-template-columns:150px 1fr auto;gap:25px;align-items:center;
- padding:26px 0;cursor:pointer
-}
-.project-index{font-size:.73rem;letter-spacing:.12em;color:#80b7d5;text-transform:uppercase}
-.project-title{font-family:var(--serif);font-size:1.35rem;color:white}
-.project-toggle{font-size:1.5rem;color:rgba(255,255,255,.55);transition:.25s}
-.project-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
-.project-body-inner{padding:0 0 32px 175px;max-width:900px}
-.project-body p{color:rgba(255,255,255,.68);margin-bottom:15px}
-.project-meta{color:#8cc0dc!important;font-size:.82rem}
+.project-head{display:grid;grid-template-columns:130px 1fr auto;gap:22px;align-items:center;padding:22px 0;cursor:pointer}
+.project-index{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#7dc1eb}
+.project-title{font-size:1.08rem;font-weight:600}
+.project-toggle{font-size:1.5rem;color:#8bc8f0;transition:.2s}
+.project-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.project.open .project-body{max-height:350px}
 .project.open .project-toggle{transform:rotate(45deg)}
-.project.open .project-body{max-height:500px}
+.project-body-inner{padding:0 0 25px 152px;max-width:920px}
+.project-body p{color:rgba(255,255,255,.7);font-size:.87rem;margin-bottom:10px}
+.project-meta{color:#87c6ec!important}
 
-/* publications */
+/* PUBLICATIONS */
 #publications{background:white}
-.pub-toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:35px 0 28px}
-.filter{background:white;border:1px solid var(--line);padding:8px 13px;font:500 .78rem var(--sans);color:var(--muted);cursor:pointer}
-.filter.active,.filter:hover{border-color:var(--blue);color:var(--blue)}
-.pub{display:grid;grid-template-columns:90px 1fr auto;gap:25px;padding:25px 0;border-top:1px solid var(--line);align-items:start}
-.pub:last-child{border-bottom:1px solid var(--line)}
-.pub-year{font-size:.82rem;color:var(--blue);font-weight:600}
-.pub h3{font-family:var(--sans);font-size:.96rem;font-weight:600;line-height:1.5;margin-bottom:6px}
-.pub p{font-size:.82rem;color:var(--muted)}
-.pub a{text-decoration:none;color:var(--blue);font-size:.78rem;white-space:nowrap}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 20px}
+.filter{border:1px solid var(--line);background:white;padding:8px 12px;border-radius:5px;font:600 .75rem var(--sans);color:var(--muted);cursor:pointer}
+.filter.active,.filter:hover{border-color:var(--blue);color:var(--blue);background:#f6fbff}
+.pub{display:grid;grid-template-columns:72px 1fr auto;gap:22px;padding:21px 0;border-top:1px solid var(--line);align-items:start}
+.pub:last-of-type{border-bottom:1px solid var(--line)}
+.pub-year{font-size:.78rem;font-weight:700;color:var(--blue)}
+.pub h3{font-size:.91rem;line-height:1.5;margin-bottom:5px}
+.pub p{font-size:.78rem;color:var(--muted)}
+.pub a{font-size:.75rem;color:var(--blue);text-decoration:none;white-space:nowrap}
 .pub.hidden{display:none}
-.pub-note{margin-top:20px;font-size:.85rem;color:var(--muted)}
+.pub-note{font-size:.8rem;color:var(--muted);margin-top:15px}
 
-/* news */
-#news{background:#f3f7fa}
-.news-list{margin-top:45px}
-.news{display:grid;grid-template-columns:125px 1fr;gap:30px;padding:22px 0;border-top:1px solid #d5e0e7}
-.news:last-child{border-bottom:1px solid #d5e0e7}
-.news time{font-size:.8rem;color:var(--blue);font-weight:600}
-.news p{font-size:.92rem}
+/* NEWS */
+#news{background:var(--soft)}
+.news-list{margin-top:35px}
+.news{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:18px 0;border-top:1px solid var(--line)}
+.news:last-child{border-bottom:1px solid var(--line)}
+.news time{font-size:.76rem;font-weight:700;color:var(--blue)}
+.news p{font-size:.87rem;color:var(--text)}
 
-/* contact */
+/* CONTACT */
 #contact{background:white}
-.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
-.contact-links{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
-.contact-links a{padding:9px 12px;border:1px solid var(--line);font-size:.78rem;text-decoration:none;color:var(--ink2)}
-.contact-details{padding-top:10px}
-.contact-details p{margin-bottom:10px}
-.email{font-family:var(--serif);font-size:clamp(1.25rem,3vw,2rem);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--blue)}
-footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.76rem}
-.footer-inner{display:flex;justify-content:space-between;gap:20px}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.contact-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.contact-links a{font-size:.75rem;font-weight:600;text-decoration:none;border:1px solid var(--line);padding:8px 11px;border-radius:5px}
+.contact-details p{font-size:.9rem;color:var(--text);margin-bottom:9px}
+.email{display:inline-block;margin-top:14px;font-size:1.25rem;font-weight:700;color:var(--blue);text-decoration:none}
+footer{background:#061a31;color:rgba(255,255,255,.55);padding:22px 0;font-size:.74rem}
+.footer{display:flex;justify-content:space-between;gap:20px}
 
 /* reveal */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transform:translateY(14px);transition:.65s ease}
 .reveal.visible{opacity:1;transform:none}
 
-@media(max-width:820px){
- .navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:#0b1c2c;padding:20px 22px;flex-direction:column;align-items:flex-start}
- .navlinks.show{display:flex}.menu{display:block}
- section{padding:75px 0}
- .intro-grid,.section-head,.contact-grid{grid-template-columns:1fr;gap:30px}
- .research-shell{grid-template-columns:1fr}
- .research-tabs{border-right:0;display:grid;grid-template-columns:1fr 1fr}
- .rtab{padding:16px}.rtab.active,.rtab:hover{padding-left:16px}
- .research-panel{padding:30px 24px}
- .project-body-inner{padding-left:0}
- .project-head{grid-template-columns:80px 1fr auto}
+@media(max-width:1000px){
+ .theme-grid{grid-template-columns:repeat(3,1fr)}
+ .hero h1{font-size:clamp(2.6rem,7vw,4.5rem)}
 }
-@media(max-width:560px){
- .container{width:min(100% - 30px,1120px)}
- .hero h1{font-size:3.25rem}
- .research-tabs{grid-template-columns:1fr}
- .milestone{grid-template-columns:1fr;gap:6px;padding-left:28px}
- .timeline:before{left:5px}.milestone:before{left:0}
- .pub{grid-template-columns:55px 1fr}.pub>a{grid-column:2}
+@media(max-width:800px){
+ .navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:12px 22px 20px;flex-direction:column;align-items:flex-start;gap:0;border-top:1px solid var(--line)}
+ .navlinks.show{display:flex}.navlinks a{padding:10px 0;border:0}.menu{display:block}
+ section{padding:70px 0}
+ .hero{min-height:690px;height:auto}
+ .hero h1{white-space:normal}
+ .theme-grid{grid-template-columns:repeat(2,1fr)}
+ .directions,.about-grid,.contact-grid{grid-template-columns:1fr;gap:30px}
+ .project-body-inner{padding-left:0}
+ .section-top{align-items:start;flex-direction:column;gap:12px}
+}
+@media(max-width:540px){
+ .container{width:min(100% - 28px,1180px)}
+ .brand{font-size:.9rem}
+ .hero{background-position:58% center}
+ .hero h1{font-size:2.7rem}
+ .theme-grid{grid-template-columns:1fr}
+ .theme-image{height:180px}
+ .timeline:before{left:5px}.milestone{grid-template-columns:1fr;gap:4px;padding-left:28px}.milestone:before{left:0}
+ .project-head{grid-template-columns:78px 1fr auto}
+ .pub{grid-template-columns:52px 1fr}.pub>a{grid-column:2}
  .news{grid-template-columns:1fr;gap:4px}
  .fact{grid-template-columns:1fr;gap:2px}
- .footer-inner{flex-direction:column}
+ .footer{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}
 }
 </style>
 </head>
 
 <body>
-<header>
+<header class="site-header">
   <div class="container nav">
     <a class="brand" href="#home">Deepak Waman</a>
-    <nav class="navlinks" id="navlinks">
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#research">Research</a>
-      <a href="#journey">Journey</a>
-      <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
-      <a href="#news">News</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="menu" id="menu" aria-label="Open navigation">☰</button>
@@ -218,33 +260,89 @@ footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-content">
-      <p class="eyebrow">Atmospheric Scientist · Cloud Physicist</p>
-      <h1>Deepak<br>Waman</h1>
-      <p class="hero-role">Cloud Physics for Weather and Climate</p>
-      <p class="hero-theme">CLOUD PHYSICS · EXTREME WEATHER · ATMOSPHERIC ELECTRICITY</p>
+      <p class="eyebrow">Atmospheric Scientist</p>
+      <h1>Deepak Waman</h1>
+      <p class="hero-theme">Cloud Physics · Extreme Weather · Atmospheric Electricity</p>
       <p class="hero-copy">Understanding cloud microphysical processes and their role in convective storms, weather, climate, and atmospheric electricity.</p>
       <div class="actions">
-        <a class="button primary" href="#research">Explore research</a>
-        <a class="button" href="assets/files/CV_Deepak_Waman.pdf" target="_blank">CV</a>
-        <a class="button" href="#publications">Publications</a>
+        <a class="button primary" href="assets/files/CV_Deepak_Waman.pdf" target="_blank">Download CV</a>
+        <a class="button" href="mailto:deepak.waman@kit.edu">Contact me</a>
+      </div>
+      <div class="hero-links">
+        <a href="https://orcid.org/0000-0001-8640-648X" target="_blank" rel="noopener"><span class="icon-circle">iD</span>ORCID</a>
+        <a href="https://www.researchgate.net/profile/Deepak_Waman2" target="_blank" rel="noopener"><span class="icon-circle">RG</span>ResearchGate</a>
+        <a href="https://www.linkedin.com/in/deepak-waman-1b7490197/" target="_blank" rel="noopener"><span class="icon-circle">in</span>LinkedIn</a>
+        <a href="https://github.com/Deepak-Waman" target="_blank" rel="noopener"><span class="icon-circle">GH</span>GitHub</a>
+        <a href="mailto:deepak.waman@kit.edu"><span class="icon-circle">@</span>Email</a>
       </div>
     </div>
   </div>
-  <div class="scroll-note">Scroll to explore</div>
+  <p class="hero-caption">Deep convective clouds</p>
+</section>
+
+<section id="research">
+  <div class="container">
+    <div class="section-top reveal">
+      <div>
+        <p class="eyebrow">Research</p>
+        <h2 class="section-title">Research Themes</h2>
+        <div class="title-rule"></div>
+      </div>
+      <a class="section-link" href="#journey">Explore my research journey →</a>
+    </div>
+
+    <div class="theme-grid reveal">
+      <article class="theme-card active" data-key="cloud">
+        <div class="theme-image" aria-hidden="true"></div>
+        <div class="theme-body"><h3>Cloud Physics</h3><p>Cloud microphysics, mixed-phase and convective clouds, precipitation processes.</p></div>
+      </article>
+      <article class="theme-card" data-key="ice">
+        <div class="theme-image" aria-hidden="true"></div>
+        <div class="theme-body"><h3>Ice Formation</h3><p>Ice nucleation, secondary ice production, supercooled water, ice multiplication.</p></div>
+      </article>
+      <article class="theme-card" data-key="aerosol">
+        <div class="theme-image" aria-hidden="true"></div>
+        <div class="theme-body"><h3>Aerosol–Cloud Interactions</h3><p>Aerosol effects on clouds, CCN/INP, cloud–precipitation and radiative responses.</p></div>
+      </article>
+      <article class="theme-card" data-key="extreme">
+        <div class="theme-image" aria-hidden="true"></div>
+        <div class="theme-body"><h3>Extreme Weather</h3><p>Deep convective storms, severe weather, storm dynamics, and climate change.</p></div>
+      </article>
+      <article class="theme-card" data-key="electric">
+        <div class="theme-image" aria-hidden="true"></div>
+        <div class="theme-body"><h3>Cloud Electrification</h3><p>Thunderstorm charging, lightning, electric fields, and microphysics–electricity coupling.</p></div>
+      </article>
+    </div>
+
+    <div class="research-detail reveal" id="researchDetail"></div>
+
+    <div class="directions reveal">
+      <div class="direction">
+        <div class="direction-label"><span class="direction-icon">☁</span>Established Research</div>
+        <h3>Cloud Physics for Weather and Climate</h3>
+        <p>Process understanding and numerical modeling of clouds, with emphasis on ice formation, secondary ice production, aerosol–cloud interactions, and mixed-phase and deep convective clouds.</p>
+      </div>
+      <div class="direction emerging">
+        <div class="direction-label"><span class="direction-icon">ϟ</span>Emerging Research</div>
+        <h3>Extreme Weather & Cloud Electrification</h3>
+        <p>Developing an independent research direction on thunderstorm electrification, lightning, and the role of cloud microphysics and aerosols in present and future convective storms.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-  <div class="container intro-grid reveal">
+  <div class="container about-grid reveal">
     <div>
-      <p class="kicker">About</p>
-      <h2>Cloud processes across scales.</h2>
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">Cloud processes across scales</h2>
     </div>
     <div class="about-copy">
-      <p class="big-intro">I study how microphysical processes within clouds shape precipitation, deep convection, weather, and climate.</p>
-      <p>I am a postdoctoral researcher at the Institute of Meteorology and Climate Research (IMK-TRO), Karlsruhe Institute of Technology (KIT), Germany. My current work focuses on the representation of mixed-phase and ice-cloud processes in the ICON modeling framework, including aerosol–cloud interactions and kilometer-scale atmospheric simulations.</p>
+      <p class="large">I study how microphysical processes within clouds shape precipitation, deep convection, weather, and climate.</p>
+      <p>I am a postdoctoral researcher at the Institute of Meteorology and Climate Research (IMK-TRO), Karlsruhe Institute of Technology (KIT), Germany. My current work focuses on mixed-phase and ice-cloud processes in the ICON modeling framework, including aerosol–cloud interactions and kilometer-scale atmospheric simulations.</p>
       <p>My PhD research at Lund University focused on primary and secondary ice formation in mixed-phase and deep convective clouds, aerosol influences on cloud microphysics, and the consequences of these processes for cloud evolution and radiative effects.</p>
-      <p>I am now extending this cloud-physics foundation toward extreme convective weather and atmospheric electricity, with particular interest in the coupling between cloud microphysics, thunderstorm charging, and lightning.</p>
-      <div class="quickfacts">
+      <p>I am extending this cloud-physics foundation toward extreme convective weather and atmospheric electricity, with particular interest in the coupling between cloud microphysics, thunderstorm charging, and lightning.</p>
+      <div class="facts">
         <div class="fact"><span>Current position</span><span>Postdoctoral Researcher, KIT · IMK-TRO</span></div>
         <div class="fact"><span>PhD</span><span>Lund University, Sweden · 2019–2023</span></div>
         <div class="fact"><span>Modeling</span><span>ICON · cloud-resolving and kilometer-scale simulations</span></div>
@@ -254,107 +352,42 @@ footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.
   </div>
 </section>
 
-<section id="research">
-  <div class="container">
-    <div class="section-head reveal">
-      <div><p class="kicker">Research</p><h2>Scientific themes</h2></div>
-      <p class="section-lead">My research is rooted in cloud physics and increasingly connects microphysical processes to convective extremes and atmospheric electricity. Select a theme to explore the scientific questions behind my work.</p>
-    </div>
-
-    <div class="research-shell reveal">
-      <div class="research-tabs">
-        <button class="rtab active" data-key="cloud"><span>Established research</span>Cloud Physics</button>
-        <button class="rtab" data-key="ice"><span>Processes</span>Ice Formation</button>
-        <button class="rtab" data-key="aerosol"><span>Interactions</span>Aerosol–Cloud</button>
-        <button class="rtab" data-key="extreme"><span>Emerging research</span>Extreme Weather</button>
-        <button class="rtab" data-key="electric"><span>Emerging research</span>Cloud Electrification</button>
-      </div>
-      <div class="research-panel" id="researchPanel"></div>
-    </div>
-  </div>
-</section>
-
 <section id="journey">
   <div class="container">
-    <div class="section-head reveal">
-      <div><p class="kicker">Research journey</p><h2>From ice microphysics to electrified storms</h2></div>
-      <p class="section-lead">A progression from process-level cloud physics toward questions that connect microphysics, convection, extreme weather, and lightning.</p>
-    </div>
+    <p class="eyebrow reveal">Research Journey</p>
+    <h2 class="section-title reveal">From ice microphysics to electrified storms</h2>
+    <p class="section-lead reveal">A progression from process-level cloud physics toward questions connecting microphysics, convection, extreme weather, and lightning.</p>
     <div class="timeline reveal">
-      <div class="milestone">
-        <div class="year">2019–2023</div>
-        <div><h3>PhD · Lund University</h3><p>Cloud microphysics, aerosol–cloud interactions, primary ice nucleation and secondary ice production in mixed-phase and deep convective clouds, using detailed numerical modeling.</p></div>
-      </div>
-      <div class="milestone">
-        <div class="year">2023–present</div>
-        <div><h3>Postdoctoral research · KIT</h3><p>Representation of mixed-phase and ice-cloud processes in ICON, with emphasis on kilometer-scale atmospheric modeling, aerosol coupling, and evaluation of cloud microphysical parameterizations.</p></div>
-      </div>
-      <div class="milestone">
-        <div class="year">Current</div>
-        <div><h3>Connecting microphysics to convection</h3><p>Investigating how ice-production processes influence the microphysics and dynamics of deep convective clouds across contrasting observational campaigns and environments.</p></div>
-      </div>
-      <div class="milestone">
-        <div class="year">Emerging</div>
-        <div><h3>Extreme weather & atmospheric electricity</h3><p>Building an independent research direction around thunderstorm electrification and lightning, with cloud microphysics providing the physical bridge between aerosol, hydrometeor interactions, charge separation, and convective intensity.</p></div>
-      </div>
+      <div class="milestone"><div class="year">2019–2023</div><div><h3>PhD · Lund University</h3><p>Cloud microphysics, aerosol–cloud interactions, primary ice nucleation and secondary ice production in mixed-phase and deep convective clouds using detailed numerical modeling.</p></div></div>
+      <div class="milestone"><div class="year">2023–present</div><div><h3>Postdoctoral research · KIT</h3><p>Representation and evaluation of mixed-phase and ice-cloud processes in ICON, with emphasis on kilometer-scale atmospheric modeling and aerosol coupling.</p></div></div>
+      <div class="milestone"><div class="year">Current</div><div><h3>Connecting microphysics to convection</h3><p>Investigating how ice-production processes influence the microphysics and dynamics of deep convective clouds across contrasting environments.</p></div></div>
+      <div class="milestone"><div class="year">Emerging</div><div><h3>Extreme weather & atmospheric electricity</h3><p>Building an independent direction around thunderstorm electrification and lightning, with cloud microphysics providing the physical bridge between aerosols, hydrometeor interactions, charge separation, and convective storms.</p></div></div>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="container">
-    <div class="section-head reveal">
-      <div><p class="kicker">Current & emerging work</p><h2>Selected projects</h2></div>
-      <p class="section-lead">These projects span my current postdoctoral research and developing independent research directions. Click a project for more detail.</p>
-    </div>
+    <p class="eyebrow reveal">Current & Emerging Work</p>
+    <h2 class="section-title reveal">Selected Projects</h2>
+    <p class="section-lead reveal">Current postdoctoral research and developing independent research directions. Click a project to expand it.</p>
 
     <div class="projects reveal">
       <article class="project open">
-        <div class="project-head">
-          <div class="project-index">01 · Current</div>
-          <div class="project-title">WarmWorld · Cloud microphysics in ICON</div>
-          <div class="project-toggle">+</div>
-        </div>
-        <div class="project-body"><div class="project-body-inner">
-          <p>Contributing to improved representation of cloud processes in kilometer-scale global simulations, including aerosol information and mixed-phase cloud microphysics within the ICON modeling framework.</p>
-          <p class="project-meta">BMBF WarmWorld · Karlsruhe Institute of Technology</p>
-        </div></div>
+        <div class="project-head"><div class="project-index">01 · Current</div><div class="project-title">WarmWorld · Cloud microphysics in ICON</div><div class="project-toggle">+</div></div>
+        <div class="project-body"><div class="project-body-inner"><p>Contributing to improved representation of cloud processes in kilometer-scale global simulations, including aerosol information and mixed-phase cloud microphysics within the ICON modeling framework.</p><p class="project-meta">BMBF WarmWorld · Karlsruhe Institute of Technology</p></div></div>
       </article>
-
       <article class="project">
-        <div class="project-head">
-          <div class="project-index">02 · Current</div>
-          <div class="project-title">Secondary ice in deep convection</div>
-          <div class="project-toggle">+</div>
-        </div>
-        <div class="project-body"><div class="project-body-inner">
-          <p>Evaluating how secondary ice-production processes modify cloud microphysics and dynamics in deep convection across contrasting environments and observational campaigns using high-resolution ICON simulations.</p>
-          <p class="project-meta">Cloud microphysics · Deep convection · Model evaluation</p>
-        </div></div>
+        <div class="project-head"><div class="project-index">02 · Current</div><div class="project-title">Secondary ice in deep convection</div><div class="project-toggle">+</div></div>
+        <div class="project-body"><div class="project-body-inner"><p>Evaluating how secondary ice-production processes modify cloud microphysics and dynamics in deep convection across contrasting environments using high-resolution ICON simulations.</p><p class="project-meta">Cloud microphysics · Deep convection · Model evaluation</p></div></div>
       </article>
-
       <article class="project">
-        <div class="project-head">
-          <div class="project-index">03 · Emerging</div>
-          <div class="project-title">CHARGE · Thunderstorm electrification</div>
-          <div class="project-toggle">+</div>
-        </div>
-        <div class="project-body"><div class="project-body-inner">
-          <p>A developing independent research programme aimed at explicitly representing thunderstorm charging and electric fields in ICON. The planned framework connects inductive and non-inductive charge separation with cloud microphysics and environmental controls on electrified convection.</p>
-          <p class="project-meta">DFG Eigene Stelle proposal · In preparation</p>
-        </div></div>
+        <div class="project-head"><div class="project-index">03 · Emerging</div><div class="project-title">CHARGE · Thunderstorm electrification</div><div class="project-toggle">+</div></div>
+        <div class="project-body"><div class="project-body-inner"><p>A developing independent research programme aimed at explicitly representing thunderstorm charging and electric fields in ICON. The planned framework connects inductive and non-inductive charge separation with cloud microphysics and environmental controls on electrified convection.</p><p class="project-meta">DFG Eigene Stelle proposal · In preparation</p></div></div>
       </article>
-
       <article class="project">
-        <div class="project-head">
-          <div class="project-index">04 · Emerging</div>
-          <div class="project-title">Aerosols, clouds & global lightning</div>
-          <div class="project-toggle">+</div>
-        </div>
-        <div class="project-body"><div class="project-body-inner">
-          <p>Combining lightning observations, reanalysis, aerosol information, and statistical or machine-learning methods to examine how thermodynamic environment, cloud phase, and aerosol conditions relate to global lightning variability.</p>
-          <p class="project-meta">WWLLN · ERA5 · CAMS · Data-driven analysis</p>
-        </div></div>
+        <div class="project-head"><div class="project-index">04 · Emerging</div><div class="project-title">Aerosols, clouds & global lightning</div><div class="project-toggle">+</div></div>
+        <div class="project-body"><div class="project-body-inner"><p>Combining lightning observations, reanalysis, aerosol information, and statistical or machine-learning methods to examine how thermodynamic environment, cloud phase, and aerosol conditions relate to global lightning variability.</p><p class="project-meta">WWLLN · ERA5 · CAMS · Data-driven analysis</p></div></div>
       </article>
     </div>
   </div>
@@ -362,12 +395,11 @@ footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.
 
 <section id="publications">
   <div class="container">
-    <div class="section-head reveal">
-      <div><p class="kicker">Research output</p><h2>Selected publications</h2></div>
-      <p class="section-lead">Selected first-author work highlighting my research on cloud microphysics, ice formation, aerosol effects, and deep convection.</p>
-    </div>
+    <p class="eyebrow reveal">Research Output</p>
+    <h2 class="section-title reveal">Selected Publications</h2>
+    <p class="section-lead reveal">Selected first-author work highlighting cloud microphysics, ice formation, aerosol effects, and deep convection.</p>
 
-    <div class="pub-toolbar reveal">
+    <div class="filters reveal">
       <button class="filter active" data-filter="all">All</button>
       <button class="filter" data-filter="ice">Ice microphysics</button>
       <button class="filter" data-filter="aerosol">Aerosol–cloud</button>
@@ -375,26 +407,10 @@ footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.
     </div>
 
     <div class="reveal">
-      <article class="pub" data-tags="ice convection">
-        <div class="pub-year">2025</div>
-        <div><h3>Impacts of Secondary Ice Production on the Microphysics and Dynamics of Deep Convective Clouds</h3><p><strong>Waman, D.</strong>, Blyth, A., Finney, D., and Hoose, C. · Atmospheric Chemistry and Physics · manuscript under revision</p></div>
-        <span></span>
-      </article>
-      <article class="pub" data-tags="ice convection">
-        <div class="pub-year">2022</div>
-        <div><h3>Multiple Observed Roles of Supercooled Liquid Water in the Life Cycle of a Severe Hailstorm</h3><p><strong>Waman, D.</strong>, Phillips, V. T. J., Patade, S., Deshmukh, A., and Bansemer, A. · Journal of the Atmospheric Sciences 79(12), 3189–3215</p></div>
-        <a href="https://doi.org/10.1175/JAS-D-21-0304.1" target="_blank" rel="noopener">DOI ↗</a>
-      </article>
-      <article class="pub" data-tags="ice convection">
-        <div class="pub-year">2022</div>
-        <div><h3>Dependencies of the Primary and Secondary Modes of Ice Production on Cloud-Top Temperature and Vertical Velocity of Deep Convective Clouds</h3><p><strong>Waman, D.</strong>, Patade, S., Jadav, A., Deshmukh, A., Bansemer, A., and Phillips, V. T. J. · Journal of the Atmospheric Sciences 79(12), 3143–3167</p></div>
-        <a href="https://doi.org/10.1175/JAS-D-21-0278.1" target="_blank" rel="noopener">DOI ↗</a>
-      </article>
-      <article class="pub" data-tags="aerosol ice convection">
-        <div class="pub-year">2022</div>
-        <div><h3>Aerosol Effects on the Primary and Secondary Ice Production in Tropical Deep Convective Clouds</h3><p><strong>Waman, D.</strong>, Patade, S., Jadav, A., Deshmukh, A., Bansemer, A., and Phillips, V. T. J. · Journal of the Atmospheric Sciences 79(12), 3261–3284</p></div>
-        <a href="https://doi.org/10.1175/JAS-D-21-0279.1" target="_blank" rel="noopener">DOI ↗</a>
-      </article>
+      <article class="pub" data-tags="ice convection"><div class="pub-year">2025</div><div><h3>Impacts of Secondary Ice Production on the Microphysics and Dynamics of Deep Convective Clouds</h3><p><strong>Waman, D.</strong>, Blyth, A., Finney, D., and Hoose, C. · Atmospheric Chemistry and Physics · manuscript</p></div><span></span></article>
+      <article class="pub" data-tags="ice convection"><div class="pub-year">2022</div><div><h3>Multiple Observed Roles of Supercooled Liquid Water in the Life Cycle of a Severe Hailstorm</h3><p><strong>Waman, D.</strong>, Phillips, V. T. J., Patade, S., Deshmukh, A., and Bansemer, A. · Journal of the Atmospheric Sciences 79(12), 3189–3215</p></div><a href="https://doi.org/10.1175/JAS-D-21-0304.1" target="_blank" rel="noopener">DOI ↗</a></article>
+      <article class="pub" data-tags="ice convection"><div class="pub-year">2022</div><div><h3>Dependencies of the Primary and Secondary Modes of Ice Production on Cloud-Top Temperature and Vertical Velocity of Deep Convective Clouds</h3><p><strong>Waman, D.</strong>, Patade, S., Jadav, A., Deshmukh, A., Bansemer, A., and Phillips, V. T. J. · Journal of the Atmospheric Sciences 79(12), 3143–3167</p></div><a href="https://doi.org/10.1175/JAS-D-21-0278.1" target="_blank" rel="noopener">DOI ↗</a></article>
+      <article class="pub" data-tags="aerosol ice convection"><div class="pub-year">2022</div><div><h3>Aerosol Effects on the Primary and Secondary Ice Production in Tropical Deep Convective Clouds</h3><p><strong>Waman, D.</strong>, Patade, S., Jadav, A., Deshmukh, A., Bansemer, A., and Phillips, V. T. J. · Journal of the Atmospheric Sciences 79(12), 3261–3284</p></div><a href="https://doi.org/10.1175/JAS-D-21-0279.1" target="_blank" rel="noopener">DOI ↗</a></article>
       <p class="pub-note">For the complete publication record, see my ORCID profile.</p>
     </div>
   </div>
@@ -402,14 +418,12 @@ footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.
 
 <section id="news">
   <div class="container">
-    <div class="section-head reveal">
-      <div><p class="kicker">News</p><h2>Recent updates</h2></div>
-      <p class="section-lead">Selected research and career updates.</p>
-    </div>
+    <p class="eyebrow reveal">News</p>
+    <h2 class="section-title reveal">Recent Updates</h2>
     <div class="news-list reveal">
-      <div class="news"><time>2026</time><p><strong>Deep-convection study.</strong> First-author work on secondary ice production and its impacts on cloud microphysics and dynamics is progressing through the publication process.</p></div>
+      <div class="news"><time>2026</time><p><strong>Deep-convection study.</strong> First-author work examining secondary ice production and its impacts on cloud microphysics and dynamics.</p></div>
       <div class="news"><time>2024–2026</time><p><strong>WarmWorld.</strong> Working on aerosol coupling and cloud microphysical processes for kilometer-scale ICON simulations at KIT.</p></div>
-      <div class="news"><time>Current</time><p><strong>Independent research direction.</strong> Developing a research programme connecting cloud microphysics, thunderstorm electrification, lightning, and extreme convective weather.</p></div>
+      <div class="news"><time>Current</time><p><strong>Independent research direction.</strong> Developing research connecting cloud microphysics, thunderstorm electrification, lightning, and extreme convective weather.</p></div>
       <div class="news"><time>Dec 2023</time><p><strong>Joined KIT.</strong> Started as a postdoctoral researcher at IMK-TRO, Karlsruhe Institute of Technology.</p></div>
     </div>
   </div>
@@ -417,9 +431,7 @@ footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.
 
 <section id="contact">
   <div class="container contact-grid reveal">
-    <div>
-      <p class="kicker">Contact</p>
-      <h2>Research, collaboration & scientific exchange.</h2>
+    <div><p class="eyebrow">Contact</p><h2 class="section-title">Research, collaboration & scientific exchange</h2>
       <div class="contact-links">
         <a href="https://orcid.org/0000-0001-8640-648X" target="_blank" rel="noopener">ORCID ↗</a>
         <a href="https://www.researchgate.net/profile/Deepak_Waman2" target="_blank" rel="noopener">ResearchGate ↗</a>
@@ -429,9 +441,8 @@ footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.
       </div>
     </div>
     <div class="contact-details">
-      <p>Postdoctoral Researcher</p>
+      <p><strong>Postdoctoral Researcher</strong></p>
       <p>Institute of Meteorology and Climate Research (IMK-TRO)<br>Karlsruhe Institute of Technology, Germany</p>
-      <br>
       <a class="email" href="mailto:deepak.waman@kit.edu">deepak.waman@kit.edu</a>
     </div>
   </div>
@@ -439,83 +450,50 @@ footer{background:#081725;color:rgba(255,255,255,.45);padding:24px 0;font-size:.
 </main>
 
 <footer>
-  <div class="container footer-inner">
-    <span>© 2026 Deepak Waman</span>
-    <span>Cloud Physics · Extreme Weather · Atmospheric Electricity</span>
-  </div>
+  <div class="container footer"><span>© <span id="year"></span> Deepak Waman</span><span>Cloud Physics · Extreme Weather · Atmospheric Electricity</span></div>
 </footer>
 
 <script>
-const research = {
- cloud:{
-  title:"Cloud Physics for Weather and Climate",
-  text:"My established research focuses on the physical processes that determine the formation, evolution, and properties of clouds. I use numerical models together with observations and reanalysis to investigate how microphysics influences precipitation, convection, radiation, and the wider atmosphere.",
-  topics:["Cloud microphysics","Mixed-phase clouds","Deep convection","Precipitation","Cloud–radiation interactions","Numerical modeling"],
-  note:"This theme provides the scientific foundation connecting my PhD research, current ICON work, and emerging research on electrified convection."
- },
- ice:{
-  title:"Ice Formation & Secondary Ice Production",
-  text:"A central part of my research examines how ice forms and multiplies in clouds. I study primary ice nucleation and secondary ice-production mechanisms, their environmental dependencies, and their influence on cloud phase, precipitation, and convective evolution.",
-  topics:["Ice nucleation","Secondary ice production","Supercooled liquid water","Ice multiplication","Mixed-phase processes","Cloud glaciation"],
-  note:"My PhD research established this process-level expertise across mixed-phase and deep convective cloud regimes."
- },
- aerosol:{
-  title:"Aerosol–Cloud Interactions",
-  text:"I investigate how aerosol populations influence cloud microphysics, particularly through their role as cloud condensation nuclei and ice-nucleating particles. My work connects aerosol perturbations to changes in ice formation, cloud evolution, precipitation, and radiative properties.",
-  topics:["Ice-nucleating particles","CCN","Aerosol indirect effects","CAMS aerosols","Aerosol–microphysics coupling","Radiative effects"],
-  note:"Current work includes representing aerosol information within ICON for kilometer-scale atmospheric simulations."
- },
- extreme:{
-  title:"Extreme Weather & Convective Storms",
-  text:"My emerging research asks how cloud-scale processes influence the organization and intensity of severe and deep convective storms. This direction links detailed cloud microphysics to storm dynamics, environmental controls, and the representation of convective extremes in weather and climate simulations.",
-  topics:["Deep convection","Severe storms","Hail","Storm dynamics","Climate change","Kilometer-scale modeling"],
-  note:"The goal is to connect process understanding from cloud physics with societally relevant questions about convective extremes."
- },
- electric:{
-  title:"Cloud Electrification & Lightning",
-  text:"I am developing an independent research direction on atmospheric electricity, focused on the physical coupling between cloud microphysics and thunderstorm charging. Key questions include how hydrometeor collisions, ice processes, aerosols, and storm environment control charge separation, electric fields, and lightning.",
-  topics:["Thunderstorm charging","Non-inductive charging","Inductive charging","Electric fields","Lightning","Microphysics–electricity coupling"],
-  note:"This is an emerging research programme building directly on my established expertise in ice microphysics and convective clouds."
- }
+const research={
+ cloud:{title:"Cloud Physics for Weather and Climate",text:"My established research focuses on the physical processes that determine the formation, evolution, and properties of clouds. I use numerical models together with observations and reanalysis to investigate how microphysics influences precipitation, convection, radiation, weather, and climate."},
+ ice:{title:"Ice Formation & Secondary Ice Production",text:"A central part of my research examines how ice forms and multiplies in clouds. I study primary ice nucleation and secondary ice-production mechanisms, their environmental dependencies, and their influence on cloud phase, precipitation, and convective evolution."},
+ aerosol:{title:"Aerosol–Cloud Interactions",text:"I investigate how aerosol populations influence cloud microphysics, particularly through their role as cloud condensation nuclei and ice-nucleating particles, and how aerosol perturbations affect cloud evolution, ice formation, precipitation, and radiative properties."},
+ extreme:{title:"Extreme Weather & Convective Storms",text:"My emerging research asks how cloud-scale processes influence deep and severe convective storms. This direction connects detailed cloud microphysics to storm dynamics, environmental controls, and convective extremes in present and future climates."},
+ electric:{title:"Cloud Electrification & Lightning",text:"I am developing an independent research direction on atmospheric electricity focused on the coupling between cloud microphysics and thunderstorm charging, including hydrometeor interactions, charge separation, electric fields, lightning, aerosols, and storm environment."}
 };
-const panel=document.getElementById("researchPanel");
-function showResearch(key){
+const detail=document.getElementById("researchDetail");
+function showTheme(key){
  const r=research[key];
- panel.innerHTML=`<h3>${r.title}</h3><p>${r.text}</p><div class="topic-list">${r.topics.map(x=>`<span>${x}</span>`).join("")}</div><div class="research-note">${r.note}</div>`;
+ detail.innerHTML=`<h3>${r.title}</h3><p>${r.text}</p>`;
 }
-showResearch("cloud");
-document.querySelectorAll(".rtab").forEach(b=>b.addEventListener("click",()=>{
- document.querySelectorAll(".rtab").forEach(x=>x.classList.remove("active"));
- b.classList.add("active");showResearch(b.dataset.key);
+showTheme("cloud");
+document.querySelectorAll(".theme-card").forEach(card=>card.addEventListener("click",()=>{
+ document.querySelectorAll(".theme-card").forEach(c=>c.classList.remove("active"));
+ card.classList.add("active");showTheme(card.dataset.key);
 }));
 
-document.querySelectorAll(".project-head").forEach(h=>h.addEventListener("click",()=>{
- h.parentElement.classList.toggle("open");
-}));
+document.querySelectorAll(".project-head").forEach(head=>head.addEventListener("click",()=>head.parentElement.classList.toggle("open")));
 
-document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
- document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");
- const f=b.dataset.filter;
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));btn.classList.add("active");
+ const f=btn.dataset.filter;
  document.querySelectorAll(".pub").forEach(p=>p.classList.toggle("hidden",f!=="all"&&!p.dataset.tags.includes(f)));
 }));
 
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")});
-},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(x=>obs.observe(x));
 
-const menu=document.getElementById("menu"), links=document.getElementById("navlinks");
-menu.addEventListener("click",()=>links.classList.toggle("show"));
-links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>links.classList.remove("show")));
+const menu=document.getElementById("menu"),navlinks=document.getElementById("navlinks");
+menu.addEventListener("click",()=>navlinks.classList.toggle("show"));
+navlinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>navlinks.classList.remove("show")));
 
 const sections=[...document.querySelectorAll("main section[id]")];
 window.addEventListener("scroll",()=>{
- let current="";
- sections.forEach(s=>{if(scrollY>=s.offsetTop-120)current=s.id});
+ let current="home";
+ sections.forEach(s=>{if(window.scrollY>=s.offsetTop-110)current=s.id});
  document.querySelectorAll(".navlinks a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
 });
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
-
-
