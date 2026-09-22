@@ -183,6 +183,417 @@ section{padding:88px 0}
 .project-body p{color:rgba(255,255,255,.7);font-size:.87rem;margin-bottom:10px}
 .project-meta{color:#87c6ec!important}
 
+/* =========================================================
+   TEACHING & SUPERVISION
+   ========================================================= */
+
+.teaching-section{
+  background:#f6f9fc;
+}
+
+
+/* SECTION SUBHEADINGS */
+
+.subsection-heading{
+  margin-top:45px;
+  margin-bottom:22px;
+
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.subsection-number{
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+  background:#e5f1fa;
+
+  color:var(--blue);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+
+.subsection-heading h3{
+  margin:2px 0 0;
+  color:var(--ink);
+  font-size:1.35rem;
+}
+
+.teaching-label{
+  margin:0;
+  color:var(--blue);
+
+  font-size:.68rem;
+  font-weight:700;
+
+  text-transform:uppercase;
+  letter-spacing:.13em;
+}
+
+.supervision-heading{
+  margin-top:60px;
+}
+
+
+/* =========================================================
+   TEACHING
+   ========================================================= */
+
+.teaching-experience-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+
+.teaching-experience-card{
+  background:white;
+
+  border:1px solid var(--line);
+  border-radius:13px;
+
+  padding:27px;
+
+  display:grid;
+  grid-template-columns:115px 1fr;
+  gap:25px;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+
+.teaching-experience-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(16,40,75,.09);
+
+  border-color:
+    rgba(30,105,175,.30);
+}
+
+
+/* DATE */
+
+.teaching-date-block{
+  border-right:1px solid var(--line);
+  padding-right:20px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+
+.teaching-year{
+  color:var(--blue);
+
+  font-size:.88rem;
+  font-weight:700;
+
+  margin-bottom:6px;
+}
+
+
+.teaching-period{
+  color:#77859a;
+
+  font-size:.70rem;
+  line-height:1.45;
+}
+
+
+/* TEACHING CONTENT */
+
+.teaching-experience-content h3{
+  margin:0 0 7px;
+
+  color:var(--ink);
+
+  font-size:1.18rem;
+}
+
+
+.course-name{
+  margin:0 0 7px;
+
+  color:var(--navy);
+
+  font-size:.85rem;
+  font-weight:600;
+}
+
+
+.teaching-place{
+  margin:0;
+
+  color:#77859a;
+
+  font-size:.76rem;
+}
+
+
+/* =========================================================
+   STUDENT SUPERVISION
+   ========================================================= */
+
+.student-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+
+.student-card{
+  background:#ffffff;
+
+  border:1px solid var(--line);
+  border-radius:14px;
+
+  padding:26px;
+
+  position:relative;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+
+.student-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 14px 36px rgba(16,40,75,.10);
+
+  border-color:
+    rgba(30,105,175,.30);
+}
+
+
+/* TOP */
+
+.student-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:20px;
+}
+
+
+.student-initials{
+  width:46px;
+  height:46px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#e7f2fb;
+
+  color:var(--blue);
+
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.05em;
+}
+
+
+.student-status{
+  padding:5px 10px;
+
+  border-radius:20px;
+
+  background:#edf7f1;
+
+  color:#397250;
+
+  font-size:.64rem;
+  font-weight:700;
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+
+/* STUDENT DETAILS */
+
+.student-type{
+  margin:0 0 5px;
+
+  color:var(--blue);
+
+  font-size:.67rem;
+  font-weight:700;
+
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+
+.student-info h3{
+  margin:0 0 13px;
+
+  color:var(--ink);
+
+  font-size:1.22rem;
+}
+
+
+.student-info h4{
+  margin:0 0 20px;
+
+  color:var(--text);
+
+  font-size:.89rem;
+  font-weight:500;
+
+  line-height:1.55;
+}
+
+
+/* METADATA */
+
+.student-meta{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:7px 15px;
+
+  margin-bottom:15px;
+
+  color:#7a8799;
+
+  font-size:.72rem;
+}
+
+
+.student-meta span + span::before{
+  content:"•";
+
+  margin-right:15px;
+
+  color:#b0bac6;
+}
+
+
+/* SUPERVISION ROLE */
+
+.supervision-role{
+  display:inline-block;
+
+  padding:6px 11px;
+
+  border-radius:6px;
+
+  background:#e8f2fb;
+
+  color:var(--blue);
+
+  font-size:.67rem;
+  font-weight:700;
+
+  letter-spacing:.03em;
+}
+
+
+.supervision-role.co-supervisor{
+  background:#f0f2f5;
+  color:#657386;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:950px){
+
+  .teaching-experience-grid{
+    grid-template-columns:1fr;
+  }
+
+  .student-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+  .subsection-heading{
+    margin-top:35px;
+  }
+
+  .supervision-heading{
+    margin-top:50px;
+  }
+
+
+  /* TEACHING */
+
+  .teaching-experience-grid{
+    grid-template-columns:1fr;
+  }
+
+  .teaching-experience-card{
+    grid-template-columns:1fr;
+    gap:15px;
+
+    padding:22px;
+  }
+
+  .teaching-date-block{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+
+    padding-right:0;
+    padding-bottom:13px;
+  }
+
+
+  /* SUPERVISION */
+
+  .student-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .student-card{
+    padding:22px;
+  }
+
+  .student-info h3{
+    font-size:1.15rem;
+  }
+
+  .student-info h4{
+    font-size:.84rem;
+  }
+
+}
+  
 /* PUBLICATIONS */
 #publications{background:white}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 20px}
@@ -350,6 +761,7 @@ footer{background:#061a31;color:rgba(255,255,255,.55);padding:22px 0;font-size:.
       <a href="#publications">Publications</a>
       <a href="#talks">Talks</a>
       <a href="#projects">Projects</a>
+      <a href="#teaching">Teaching</a>
       <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -428,6 +840,263 @@ footer{background:#061a31;color:rgba(255,255,255,.55);padding:22px 0;font-size:.
   </div>
 </section>
 
+<!-- =========================================================
+     TEACHING & SUPERVISION
+     ========================================================= -->
+
+<section id="teaching" class="teaching-section">
+  <div class="container">
+
+    <p class="eyebrow reveal">Teaching & Supervision</p>
+
+    <h2 class="section-title reveal">
+      Teaching and Research Supervision
+    </h2>
+
+    <p class="section-lead reveal">
+      Teaching and supervision of Master's students and student researchers
+      at Karlsruhe Institute of Technology (KIT), with topics spanning cloud
+      physics, cloud microphysics, atmospheric dynamics, lightning, and
+      data-driven methods.
+    </p>
+
+
+    <!-- =====================================================
+         TEACHING
+         ===================================================== -->
+
+    <div class="subsection-heading reveal">
+      <span class="subsection-number">01</span>
+      <div>
+        <p class="teaching-label">Teaching</p>
+        <h3>Cloud Physics</h3>
+      </div>
+    </div>
+
+
+    <div class="teaching-experience-grid">
+
+      <!-- Teaching 2025–2026 -->
+      <article class="teaching-experience-card reveal">
+
+        <div class="teaching-date-block">
+          <span class="teaching-year">2025–2026</span>
+          <span class="teaching-period">Oct. 2025 – Feb. 2026</span>
+        </div>
+
+        <div class="teaching-experience-content">
+          <h3>Tutor & Lecturer</h3>
+
+          <p class="course-name">
+            Cloud Physics · Master's level
+          </p>
+
+          <p class="teaching-place">
+            Karlsruhe Institute of Technology (KIT), Germany
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- Teaching 2024–2025 -->
+      <article class="teaching-experience-card reveal">
+
+        <div class="teaching-date-block">
+          <span class="teaching-year">2024–2025</span>
+          <span class="teaching-period">Oct. 2024 – Feb. 2025</span>
+        </div>
+
+        <div class="teaching-experience-content">
+          <h3>Tutor</h3>
+
+          <p class="course-name">
+            Cloud Physics · Master's level
+          </p>
+
+          <p class="teaching-place">
+            Karlsruhe Institute of Technology (KIT), Germany
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         RESEARCH SUPERVISION
+         ===================================================== -->
+
+    <div class="subsection-heading supervision-heading reveal">
+
+      <span class="subsection-number">02</span>
+
+      <div>
+        <p class="teaching-label">Research Supervision</p>
+        <h3>MSc Theses & Student Research</h3>
+      </div>
+
+    </div>
+
+
+    <div class="student-grid">
+
+
+      <!-- ANN HENZE -->
+      <article class="student-card reveal">
+
+        <div class="student-card-top">
+
+          <div class="student-initials">AH</div>
+
+          <div class="student-status">
+            Ongoing
+          </div>
+
+        </div>
+
+        <div class="student-info">
+
+          <p class="student-type">MSc Thesis</p>
+
+          <h3>Ann Henze</h3>
+
+          <h4>
+            Data-driven approach to understand controls on lightning
+            occurrence across global lightning hotspots
+          </h4>
+
+          <div class="student-meta">
+            <span>KIT</span>
+            <span>2026 – Ongoing</span>
+          </div>
+
+          <div class="supervision-role">
+            Main Supervisor
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- XUAN ZHANG -->
+      <article class="student-card reveal">
+
+        <div class="student-card-top">
+
+          <div class="student-initials">XZ</div>
+
+          <div class="student-status">
+            Ongoing
+          </div>
+
+        </div>
+
+        <div class="student-info">
+
+          <p class="student-type">MSc Thesis</p>
+
+          <h3>Xuan Zhang</h3>
+
+          <h4>
+            Predicting ice multiplication using machine learning
+          </h4>
+
+          <div class="student-meta">
+            <span>KIT</span>
+            <span>2026 – Ongoing</span>
+          </div>
+
+          <div class="supervision-role">
+            Main Supervisor
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ANTONIS MICHALOPOULOS -->
+      <article class="student-card reveal">
+
+        <div class="student-card-top">
+
+          <div class="student-initials">AM</div>
+
+          <div class="student-status">
+            Ongoing
+          </div>
+
+        </div>
+
+        <div class="student-info">
+
+          <p class="student-type">MSc Thesis</p>
+
+          <h3>Antonis Michalopoulos</h3>
+
+          <h4>
+            Impact of SIP on the dynamics of extratropical cyclones
+          </h4>
+
+          <div class="student-meta">
+            <span>KIT</span>
+            <span>2026 – Ongoing</span>
+          </div>
+
+          <div class="supervision-role co-supervisor">
+            Co-Supervisor
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ABDULLAH NASSAR -->
+      <article class="student-card reveal">
+
+        <div class="student-card-top">
+
+          <div class="student-initials">AN</div>
+
+          <div class="student-status">
+            Ongoing
+          </div>
+
+        </div>
+
+        <div class="student-info">
+
+          <p class="student-type">Research Assistant</p>
+
+          <h3>Abdullah Nassar</h3>
+
+          <h4>
+            Influence of soluble aerosols on lightning activity over Europe
+          </h4>
+
+          <div class="student-meta">
+            <span>KIT</span>
+            <span>2025 – Ongoing</span>
+          </div>
+
+          <div class="supervision-role">
+            Main Supervisor
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+</section>
+  
 <section id="about">
   <div class="container about-grid reveal">
     <div>
@@ -489,7 +1158,7 @@ footer{background:#061a31;color:rgba(255,255,255,.55);padding:22px 0;font-size:.
     </div>
   </div>
 </section>
-
+  
 <section id="publications">
   <div class="container">
     <p class="eyebrow reveal">Research Output</p>
@@ -595,7 +1264,7 @@ footer{background:#061a31;color:rgba(255,255,255,.55);padding:22px 0;font-size:.
     <div class="contact-details">
       <p><strong>Postdoctoral Researcher</strong></p>
       <p>Institute of Meteorology and Climate Research (IMKTRO)<br>Karlsruhe Institute of Technology, Germany</p>
-      <a class="email" href="mailto:deepak.waman@kit.edu">deepak.waman@kit.edu</a>
+      <a class="email" href="mailto:deepak.waman@kit.edu">deepak.waman@kit.edu</a> 
     </div>
   </div>
 </section>
