@@ -1275,7 +1275,7 @@ footer{background:#061a31;color:rgba(255,255,255,.55);padding:22px 0;font-size:.
 </main>
 
 <footer>
-  <div class="container footer"><span>© <span id="year"></span> Deepak Waman</span><span>Cloud Physics · Extreme Weather · Atmospheric Electricity</span></div>
+  <div class="container footer"><span>© <span id="year"></span> Deepak Waman</span><span>Cloud Physics · Atmospheric Electricity</span></div>
 </footer>
 
 <script>
@@ -1312,13 +1312,39 @@ const menu=document.getElementById("menu"),navlinks=document.getElementById("nav
 menu.addEventListener("click",()=>navlinks.classList.toggle("show"));
 navlinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>navlinks.classList.remove("show")));
 
-const sections=[...document.querySelectorAll("main section[id]")];
-window.addEventListener("scroll",()=>{
- let current="home";
- sections.forEach(s=>{if(window.scrollY>=s.offsetTop-110)current=s.id});
- document.querySelectorAll(".navlinks a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
-});
-document.getElementById("year").textContent=new Date().getFullYear();
+const sections = [...document.querySelectorAll("main section[id]")];
+
+function updateActiveNav() {
+  let current = "home";
+
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 110) {
+      current = section.id;
+    }
+  });
+
+  // If the page has reached the bottom, activate Contact
+  const atBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 10;
+
+  if (atBottom) {
+    current = "contact";
+  }
+
+  document.querySelectorAll(".navlinks a").forEach(link => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === "#" + current
+    );
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav);
+
+updateActiveNav();
+
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
